@@ -1,0 +1,532 @@
+:root {
+    --primary-neon-pink: #FF00FF; /* Un rosa neón más vibrante */
+    --secondary-neon-pink: #FF69B4; /* Un rosa más suave para toques */
+    --dark-background: #1a001a; /* Fondo muy oscuro, casi negro con un toque púrpura */
+    --medium-dark-background: #2b002b; /* Un poco más claro para secciones */
+    --light-text: #E0E0E0; /* Texto claro para contraste */
+    --lighter-text: #FFFFFF; /* Texto blanco puro para títulos/importante */
+    --border-neon-dark: #3a003a; /* Borde oscuro con toque neón */
+
+    --font-heading: "Oswald", sans-serif;
+    --font-body: "Playwrite HU", cursive;
+    --font-accent: "Pacifico", serif;
+}
+
+body {
+    margin: 0;
+    background-color: var(--dark-background); /* Fondo oscuro principal */
+    line-height: 1.6;
+    color: var(--light-text); /* Color de texto general claro */
+}
+
+/* Header */
+header {
+    position: relative;
+    background-color: var(--medium-dark-background); /* Fondo ligeramente más claro que el body */
+    padding: 30px;
+    text-align: center;
+    overflow: hidden;
+    /* Añadir un sutil brillo neón al header */
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.3); /* Sombra difuminada */
+}
+
+.logo {
+    width: 210px;
+    height: 160px;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+#inicio { /* Título principal */
+    color: var(--lighter-text); /* Blanco puro para el título */
+    font-size: 3.5rem;
+    margin: 0;
+    text-shadow: 0 0 10px var(--primary-neon-pink), 0 0 20px var(--primary-neon-pink), 0 0 30px var(--primary-neon-pink); /* Múltiples sombras para efecto neón en texto */
+    font-family: var(--font-accent);
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 5;
+}
+
+/* Contenedor de botones de navegación */
+.cocktail-buttons {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex; /* Habilitar flexbox para organizar los elementos */
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan a la siguiente línea */
+    justify-content: center; /* Centrar los elementos horizontalmente */
+    gap: 10px; /* Espacio entre los botones */
+    padding: 0 15px; /* Pequeño padding lateral */
+}
+
+.button-link {
+    background-color: var(--primary-neon-pink); /* Fondo rosa neón */
+    color: var(--lighter-text); /* Texto blanco puro */
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 0, 255, 0.4); /* Sombra y brillo sutil */
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+    min-width: 120px; /* Added for consistent width, if desired */
+    text-align: center; /* Ensures text inside is centered */
+}
+
+.button-link:hover {
+    background-color: var(--secondary-neon-pink); /* Rosa más suave al pasar el ratón */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 15px var(--primary-neon-pink), 0 0 25px rgba(255, 0, 255, 0.6); /* Brillo más intenso */
+}
+
+
+/* Buscador */
+.buscador {
+    text-align: center;
+    padding: 2.5rem 1.8rem;
+    background-color: var(--medium-dark-background); /* Fondo oscuro para el buscador */
+    border-bottom: 1px solid var(--border-neon-dark); /* Borde sutil oscuro */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 10px rgba(255, 0, 255, 0.2); /* Sombra y brillo neón */
+}
+
+#search {
+    width: 350px;
+    padding: 12px 18px;
+    background-color: var(--dark-background); /* Fondo oscuro para el input */
+    color: var(--light-text); /* Texto claro en el input */
+    border: 1px solid var(--border-neon-dark);
+    border-radius: 25px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.5); /* Sombra interna para profundidad */
+}
+
+#search::placeholder { /* Estilo para el placeholder */
+    color: var(--light-text);
+    opacity: 0.7;
+}
+
+#search:focus {
+    border-color: var(--primary-neon-pink); /* Borde neón al enfocar */
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.5),
+                0 0 8px var(--primary-neon-pink), /* Brillo neón al enfocar */
+                0 0 15px rgba(255, 0, 255, 0.3);
+}
+
+input[type="submit"] {
+    background-color: var(--primary-neon-pink); /* Fondo rosa neón para el botón */
+    color: var(--lighter-text); /* Texto blanco puro */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 0, 255, 0.5); /* Sombra y brillo neón */
+}
+
+input[type="submit"]:hover {
+    background-color: var(--secondary-neon-pink); /* Tono de rosa neón al pasar el ratón */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5), 0 0 20px var(--primary-neon-pink), 0 0 30px rgba(255, 0, 255, 0.7); /* Brillo neón más intenso */
+}
+
+input[type="submit"]:active {
+    background-color: #C000C0; /* Rosa más oscuro al clickear */
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 0, 255, 0.3);
+}
+
+/* Contenedor de Artículos */
+#posts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Artículos individuales */
+article.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0;
+    background-color: var(--medium-dark-background); /* Fondo oscuro para los artículos */
+    border: 1px solid var(--border-neon-dark); /* Borde oscuro */
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 0, 255, 0.2); /* Sombra oscura y sutil brillo neón */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer; /* Añadido para indicar que es clickeable */
+}
+
+article.container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4), /* Sombra más grande */
+                0 0 20px var(--primary-neon-pink), /* Neón más pronunciado */
+                0 0 30px rgba(255, 0, 255, 0.6); /* Capa extra de neón */
+}
+
+/* Imágenes dentro de los artículos */
+article.container img {
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+    border-radius: 10px;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Sombra sutil en la imagen */
+    transition: box-shadow 0.3s ease; /* Transición para posible hover en img */
+}
+
+article.container img:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px var(--secondary-neon-pink); /* Sutil brillo neón en imagen al pasar el ratón */
+}
+
+
+/* Títulos y Párrafos dentro de los artículos */
+.container h2 {
+    text-align: center;
+    font-family: var(--font-heading);
+    color: var(--lighter-text); /* Texto blanco para títulos */
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 8px rgba(255, 0, 255, 0.5); /* Pequeño brillo neón en títulos */
+}
+
+.container p {
+    margin: 0 0 1.5rem 0;
+    font-family: var(--font-body);
+    color: var(--light-text); /* Texto claro para párrafos */
+    text-align: center;
+}
+
+.container h3 {
+    text-align: center;
+    font-family: var(--font-heading);
+    color: var(--lighter-text); /* Texto blanco para subtítulos */
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    position: relative;
+    text-shadow: 0 0 5px rgba(255, 0, 255, 0.4); /* Pequeño brillo neón en subtítulos */
+}
+
+/* Decorador para subtítulos */
+.container h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-neon-pink); /* Línea neón */
+    margin: 0.5rem auto 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 0 8px var(--primary-neon-pink); /* Brillo neón en la línea */
+}
+
+/* Footer */
+footer {
+    background-color: var(--medium-dark-background); /* Fondo oscuro para el footer */
+    padding: 3rem 0; /* Ajusta el padding para que no haya padding lateral excesivo */
+    color: var(--lighter-text); /* Texto blanco puro */
+    margin: 0;
+    text-align: center; /* Centrar todo el contenido (top y bottom divs) */
+    font-family: var(--font-body);
+    position: relative;
+    z-index: 10;
+    /* Brillo neón sutil para el footer */
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+}
+
+.footer-top {
+    margin-bottom: 20px;
+}
+
+footer a {
+    color: var(--primary-neon-pink); /* Enlaces en rosa neón */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    text-shadow: 0 0 5px rgba(255, 0, 255, 0.5); /* Sombra neón en enlaces */
+    padding: 10px 20px; /* Añade un padding para que parezca un botón */
+    border: 1px solid var(--primary-neon-pink); /* Borde neón */
+    border-radius: 25px; /* Bordes redondeados */
+    background-color: transparent; /* Fondo transparente por defecto */
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.3); /* Sutil brillo neón */
+}
+
+footer a:hover {
+    color: var(--lighter-text); /* Texto blanco al pasar el ratón */
+    background-color: var(--primary-neon-pink); /* Fondo rosa neón al pasar el ratón */
+    text-decoration: none; /* Quita el subrayado al pasar el ratón */
+    text-shadow: none; /* Quita la sombra del texto al pasar el ratón */
+    box-shadow: 0 0 20px var(--primary-neon-pink), 0 0 30px rgba(255, 0, 255, 0.7); /* Brillo neón más intenso */
+}
+
+/* Detail Panel Styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cocktail-detail-panel {
+    background-color: var(--medium-dark-background); /* Fondo del panel */
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.8); /* Brillo neón intenso */
+    text-align: center;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.overlay.visible .cocktail-detail-panel {
+    transform: scale(1);
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--primary-neon-pink);
+    cursor: pointer;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    text-shadow: 0 0 8px rgba(255, 0, 255, 0.5);
+}
+
+.close-button:hover {
+    color: var(--lighter-text);
+    text-shadow: 0 0 15px var(--primary-neon-pink);
+}
+
+#detail-title {
+    color: var(--primary-neon-pink);
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+}
+
+#detail-image {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
+}
+
+#detail-description {
+    color: var(--light-text);
+    font-family: var(--font-body);
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.detail-ingredients,
+.detail-adornments,
+.detail-observations {
+    background-color: var(--dark-background); /* Fondo más oscuro para secciones */
+    padding: 15px 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 10px rgba(255, 0, 255, 0.1); /* Sombra interna neón sutil */
+}
+
+.detail-ingredients h3,
+.detail-adornments h3,
+.detail-observations h3 {
+    color: var(--primary-neon-pink); /* Títulos de sección en neón */
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px rgba(255, 0, 255, 0.5);
+}
+
+#detail-ingredients-list {
+    list-style: none; /* Quitar viñetas */
+    padding: 0;
+    margin: 0;
+    color: var(--light-text);
+    font-family: var(--font-body);
+    text-align: center;
+}
+
+#detail-ingredients-list li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+#detail-adornments-text,
+#detail-observations-text {
+    color: var(--light-text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #inicio {
+        font-size: 28px;
+    }
+
+    .logo {
+        width: 150px;
+        height: 110px;
+        left: 10px;
+    }
+
+    .cocktail-buttons {
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .button-link {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        min-width: 100px;
+    }
+
+    #search {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .container {
+        width: 95%;
+        margin: 1rem auto;
+        padding: 0.8rem 0;
+    }
+
+    .alexander, .alexandra, .alisiosdepasion, .angel, .angelface, .bull-shot {
+        font-size: 1.8rem;
+    }
+
+    .parrafoalexander, .parrafoalexandra, .parrafoalisios, .parrafoangel, .parrafoangelface, .parrafobull-shot {
+        font-size: 1rem;
+        margin: 1rem;
+    }
+
+    .subtitulosalexander, .subtitulosalexandra, .subtitulosalisios, .subtitulosangel, .subtitulosangelface, .subtitulosbull-shot {
+        font-size: 1.5rem;
+    }
+
+    .alexanderparrafo, .alexandraparrafo, .alisiosparrafo, .angelparrafo, .angelfaceparrafo, .bull-shot-parrafo {
+        font-size: 0.9rem;
+        margin: 0.5rem 1rem;
+    }
+
+    .cocktail-detail-panel {
+        padding: 20px;
+    }
+
+    #detail-title {
+        font-size: 2rem;
+    }
+
+    .detail-ingredients h3,
+    .detail-adornments h3,
+    .detail-observations h3 {
+        font-size: 1.5rem;
+    }
+
+    #detail-description,
+    #detail-ingredients-list li,
+    #detail-adornments-text,
+    #detail-observations-text {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #inicio {
+        font-size: 24px;
+    }
+
+    .logo {
+        display: none; /* Hide logo on very small screens if it causes layout issues */
+    }
+
+    .cocktail-buttons {
+        gap: 8px;
+    }
+
+    .button-link {
+        padding: 7px 12px;
+        font-size: 0.85rem;
+        min-width: 90px;
+    }
+
+    #search {
+        width: 90%;
+    }
+
+    .container {
+        width: 98%;
+        padding: 0.5rem 0;
+    }
+
+    .alexander, .alexandra, .alisiosdepasion, .angel, .angelface, .bull-shot {
+        font-size: 1.6rem;
+    }
+}
+
+#scrollToTopBtn {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posición fija */
+    bottom: 50%; /* Centrado verticalmente */
+    right: 30px; /* A 30px del borde derecho */
+    transform: translateY(50%); /* Ajuste para el centrado vertical real */
+    z-index: 99; /* Asegura que esté por encima de otros elementos */
+    border: none; /* Sin borde */
+    outline: none; /* Sin contorno al hacer foco */
+    background-color: #f33c97; /* Color de fondo rosa (Pink Paradise) */
+    color: white; /* Texto blanco */
+    cursor: pointer; /* Cursor de puntero */
+    padding: 15px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    font-size: 18px; /* Tamaño de fuente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #d64a93; /* Un rosa más oscuro al pasar el ratón */
+}
